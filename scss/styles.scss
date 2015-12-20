@@ -1,4 +1,5 @@
 body{
+
 }
 
 h1{
@@ -8,6 +9,9 @@ h1{
 ul{
   background-color: yellowgreen;
   margin: auto;
+
+  display: flex;
+  flex-flow: row wrap;
 }
 
 li{
@@ -66,6 +70,8 @@ ul.pixels{
   width: 400px;
   height: 400px;
   padding:0;
+
+
 }
 
 ul.pixels li{
@@ -74,10 +80,10 @@ ul.pixels li{
   padding:0;
   box-sizing:border-box;
   list-style-type: none;
-  
+  flex: 0 0 40px;
   // Temporary (Comment out & implement the real fix)
-  display: inline-block;
-  width: 40px;
+  /*display: inline-block;
+  width: 40px;*/
 }
 
 
@@ -88,6 +94,7 @@ ul.responsive-pixels{
   width: 100%;
   margin:0;
   padding:0;
+
 }
 
 ul.responsive-pixels li{
@@ -96,10 +103,13 @@ ul.responsive-pixels li{
   padding:0;
   list-style-type: none;
   box-sizing:border-box;
+  flex: 1 0 70px;
 
   // Temporary (Comment out & implement the real fix)
-  display: inline-block;
-  width: 70px;
+  /*display: inline-block;*/
+ /* display: flex;
+  flex-flow: row wrap;
+  width: 70px;*/
 }
 
 // Grid3 Demo
@@ -123,7 +133,7 @@ ul.responsive-pixels-2 li{
   box-sizing:border-box;
 
   // Fix This!
-  flex: 0 0 70px;
+  flex: 0 0 10%;
 }
 
 // Grid4 Demo
@@ -133,30 +143,38 @@ ul.responsive-pixels-2 li{
   height: 500px;
   margin: auto;
   background-color: pink;
+  display: flex;
+  flex-flow: column wrap;
 }
 
 .flexbox-inner-left{
   border: 10px solid green;
   background-color: yellowgreen;
   box-sizing: border-box;
-  
+
   // Temporary
-  display: inline-block;
+ /* display: inline-block;
   width: 30%;
   height: 100%;
-  vertical-align: top;
+  vertical-align: top;*/
+  flex: 0 0 30%;
+  order: 2;
+
 }
 
 .flexbox-inner-right{
   border: 10px solid orange;
   background-color: yellow;
   box-sizing: border-box;
-  
-  // Temporary  
-  display: inline-block;
+
+  // Temporary
+ /* display: inline-block;
   width: 70%;
   height: 100%;
-  vertical-align: top;
+  vertical-align: top;*/
+
+  flex: 0 0 70%;
+  order: 1;
 }
 
 // Grid5 Demo
@@ -166,17 +184,19 @@ ul.responsive-pixels-2 li{
 ul.odd-pixels{
   width: 600px;
   padding:0;
+  list-style: none;
 }
 
 ul.odd-pixels li{
   padding: 10px;
   margin:0;
   box-sizing:border-box;
-  
+  flex: 0 0 33.3333%;
+
   // Temporary
-  display: inline-block;
+ /* display: inline-block;
   vertical-align: top;
-  width: 33.3333%;
+  width: 33.3333%;*/
 }
 
 // Grid6 Demo
@@ -188,6 +208,8 @@ ul.odd-pixels li{
   padding:0;
   margin:0;
   height: 500px;
+  display: flex;
+  flex-flow: row nowrap;
 }
 
 .centered h1{
@@ -195,5 +217,6 @@ ul.odd-pixels li{
   padding:0;
   margin-top: 0;
   margin-bottom: 0;
-  margin:auto;
+  margin: auto;
+  flex: 0 0 auto;
 }
